@@ -25,24 +25,19 @@ variable "instance_ebs_size" {
   default     = 50
 }
 variable "instance_arm64_architecture" {
-  type = bool
+  type        = bool
   description = "Do you want to use ARM64 as architecture?"
-  default = true
+  default     = true
 }
 
 # coder-code related variables
 variable "code_version" {
   type        = string
   description = "Which version to use of coder-code"
-  default     = "4.95.3"
-}
-variable "code_custom_password" {
-  type = string
-  description = "Define a custom password instead of the instance ID as a password."
-  default = ""
+  default     = "4.96.4"
 }
 variable "code_port" {
-  type = string
+  type        = string
   description = "Which port to expose?"
-  default = "8080"
+  default     = "8080"
 }
