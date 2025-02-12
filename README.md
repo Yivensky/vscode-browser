@@ -7,7 +7,6 @@ The architecture of this solution uses [code-server](https://github.com/coder/co
 The deployment leverages EC2 instances, VPCs, and appropriate security configurations.
 
 ## How to Deploy
-
 1. Clone the repository.
 2. Configure a `terraform.tfvars` file. Ex:
     ```hcl
@@ -25,8 +24,11 @@ The deployment leverages EC2 instances, VPCs, and appropriate security configura
 
 5. Access your code-browser through the CloudFront endpoint. Use the EC2 instance ID as the password.
 
-## Credits
-Powered by [code-server](https://github.com/coder/code-server) and [Visual Studio Code](https://code.visualstudio.com/)
+## Powered by
+This project is powered by [Visual Studio Code](https://github.com/Microsoft/vscode) and [code-server](https://github.com/coder/code-server), both licensed under the MIT License.
+
+## License
+This project is licensed under the MIT License. See [LICENSE](./LICENSE) for more details.
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
