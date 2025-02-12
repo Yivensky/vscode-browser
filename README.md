@@ -34,14 +34,14 @@ This project is licensed under the MIT License. See [LICENSE](./LICENSE) for mor
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.83.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.80.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.83.1 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 5.86.1 |
 
 ## Modules
 
@@ -53,15 +53,15 @@ This project is licensed under the MIT License. See [LICENSE](./LICENSE) for mor
 
 | Name | Type |
 |------|------|
-| [aws_cloudfront_cache_policy.caching](https://registry.terraform.io/providers/hashicorp/aws/5.83.1/docs/resources/cloudfront_cache_policy) | resource |
-| [aws_cloudfront_distribution.code](https://registry.terraform.io/providers/hashicorp/aws/5.83.1/docs/resources/cloudfront_distribution) | resource |
-| [aws_iam_instance_profile.app](https://registry.terraform.io/providers/hashicorp/aws/5.83.1/docs/resources/iam_instance_profile) | resource |
-| [aws_iam_role.app](https://registry.terraform.io/providers/hashicorp/aws/5.83.1/docs/resources/iam_role) | resource |
-| [aws_iam_role_policy_attachment.app_attach_ssm_policy](https://registry.terraform.io/providers/hashicorp/aws/5.83.1/docs/resources/iam_role_policy_attachment) | resource |
-| [aws_instance.code](https://registry.terraform.io/providers/hashicorp/aws/5.83.1/docs/resources/instance) | resource |
-| [aws_ec2_managed_prefix_list.cloudfront](https://registry.terraform.io/providers/hashicorp/aws/5.83.1/docs/data-sources/ec2_managed_prefix_list) | data source |
-| [aws_iam_policy_document.ec2_assume_role](https://registry.terraform.io/providers/hashicorp/aws/5.83.1/docs/data-sources/iam_policy_document) | data source |
-| [aws_ssm_parameter.al2023_ami_id](https://registry.terraform.io/providers/hashicorp/aws/5.83.1/docs/data-sources/ssm_parameter) | data source |
+| [aws_cloudfront_cache_policy.caching](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_cache_policy) | resource |
+| [aws_cloudfront_distribution.code](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/cloudfront_distribution) | resource |
+| [aws_iam_instance_profile.app](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_instance_profile) | resource |
+| [aws_iam_role.app](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.app_attach_ssm_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_instance.code](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/instance) | resource |
+| [aws_ec2_managed_prefix_list.cloudfront](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ec2_managed_prefix_list) | data source |
+| [aws_iam_policy_document.ec2_assume_role](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_ssm_parameter.al2023_ami_id](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/ssm_parameter) | data source |
 
 ## Inputs
 
@@ -80,5 +80,5 @@ This project is licensed under the MIT License. See [LICENSE](./LICENSE) for mor
 
 | Name | Description |
 |------|-------------|
-| <a name="output_cloudfront_endpoint"></a> [cloudfront\_endpoint](#output\_cloudfront\_endpoint) | n/a |
+| <a name="output_cloudfront_endpoint"></a> [cloudfront\_endpoint](#output\_cloudfront\_endpoint) | Cloudfront endpoint URL |
 <!-- END_TF_DOCS -->
