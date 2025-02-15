@@ -3,7 +3,6 @@ resource "aws_cloudfront_distribution" "code" {
   enabled         = true
   is_ipv6_enabled = true
   comment         = "${local.prefix_name} Cloudfront Distribution"
-  http_version    = "http1.1"
   origin {
     domain_name = aws_instance.code.public_dns
     origin_id   = local.prefix_name
@@ -40,6 +39,14 @@ resource "aws_cloudfront_distribution" "code" {
   viewer_certificate {
     cloudfront_default_certificate = true
   }
+
+  lifecycle {
+    precondition {
+      condition     = aws_instance.code.public_dns != ""
+      error_message = "The instance must be in a public subnet with a IPv4 address attached to be used with CloudFront."
+    }
+  }
+  depends_on = [aws_instance.code]
 }
 # Create cloudfront cache policy
 resource "aws_cloudfront_cache_policy" "caching" {

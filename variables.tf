@@ -2,15 +2,17 @@
 variable "region" {
   type        = string
   description = "Specify the AWS region to use."
+  default     = null
 }
 variable "vpc_id" {
   type        = string
   description = "Specify the VPC ID to use."
+  default     = null
 }
 variable "subnet_id" {
   type        = string
   description = "Specify the subnet ID to use instead of the default one."
-  default     = ""
+  default     = null
 }
 
 # Instance related variables
@@ -34,7 +36,6 @@ variable "instance_arm64_architecture" {
 variable "code_version" {
   type        = string
   description = "Which version to use of coder-code"
-  default     = "4.96.4"
 }
 variable "code_port" {
   type        = string

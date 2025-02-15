@@ -2,17 +2,20 @@
 Launch easily a Visual Studio Code instance within a browser.
 Connect securely through your code browser from a CloudFront endpoint, using your instance ID as a password.
 
+This solution uses [code-server](https://github.com/coder/code-server) to run Visual Studio Code within the browser, with secure access managed through an AWS CloudFront distribution.
+The deployment leverages EC2 instances, Cloudfront, and appropriate security configurations.
+![Preview](images/preview.png)
+
 ## Architecture
-The architecture of this solution uses [code-server](https://github.com/coder/code-server) to run Visual Studio Code within the browser, with secure access managed through an AWS CloudFront distribution.  
-The deployment leverages EC2 instances, VPCs, and appropriate security configurations.
+![Architecture](images/vscode-browser-architecture.svg)
 
 ## How to Deploy
 1. Clone the repository.
 2. Configure a `terraform.tfvars` file. Ex:
     ```hcl
     region = "your-region"
-    vpc_id = "your-vpc-id"
     subnet_id = "your-subnet-id"
+    code_version = "4.96.4" # Check code-server repository to get the latest version.
     ```
     Refer to the full variables options below for more informations.
 3. Connect your terminal to your AWS environement.
@@ -22,7 +25,7 @@ The deployment leverages EC2 instances, VPCs, and appropriate security configura
     terraform apply
     ```
 
-5. Access your code-browser through the CloudFront endpoint. Use the EC2 instance ID as the password.
+5. Access your code-browser through the CloudFront endpoint.
 
 ## Powered by
 This project is powered by [Visual Studio Code](https://github.com/Microsoft/vscode) and [code-server](https://github.com/coder/code-server), both licensed under the MIT License.
@@ -68,13 +71,13 @@ This project is licensed under the MIT License. See [LICENSE](./LICENSE) for mor
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_code_port"></a> [code\_port](#input\_code\_port) | Which port to expose? | `string` | `"8080"` | no |
-| <a name="input_code_version"></a> [code\_version](#input\_code\_version) | Which version to use of coder-code | `string` | `"4.96.4"` | no |
+| <a name="input_code_version"></a> [code\_version](#input\_code\_version) | Which version to use of coder-code | `string` | n/a | yes |
 | <a name="input_instance_arm64_architecture"></a> [instance\_arm64\_architecture](#input\_instance\_arm64\_architecture) | Do you want to use ARM64 as architecture? | `bool` | `true` | no |
 | <a name="input_instance_ebs_size"></a> [instance\_ebs\_size](#input\_instance\_ebs\_size) | EBS disk size used by the instance. | `number` | `50` | no |
 | <a name="input_instance_type"></a> [instance\_type](#input\_instance\_type) | Instance type to use. | `string` | `"t4g.micro"` | no |
-| <a name="input_region"></a> [region](#input\_region) | Specify the AWS region to use. | `string` | n/a | yes |
-| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Specify the subnet ID to use instead of the default one. | `string` | `""` | no |
-| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | Specify the VPC ID to use. | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | Specify the AWS region to use. | `string` | `null` | no |
+| <a name="input_subnet_id"></a> [subnet\_id](#input\_subnet\_id) | Specify the subnet ID to use instead of the default one. | `string` | `null` | no |
+| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | Specify the VPC ID to use. | `string` | `null` | no |
 
 ## Outputs
 
