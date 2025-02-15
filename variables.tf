@@ -2,12 +2,12 @@
 variable "region" {
   type        = string
   description = "Specify the AWS region to use."
-  default = null
+  default     = null
 }
 variable "vpc_id" {
   type        = string
   description = "Specify the VPC ID to use."
-  default = null
+  default     = null
 }
 variable "subnet_id" {
   type        = string
