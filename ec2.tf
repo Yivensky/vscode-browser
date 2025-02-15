@@ -27,8 +27,8 @@ resource "aws_instance" "code" {
   # Flag error if no public DNS, which is required for CloudFront
   lifecycle {
     postcondition {
-      condition     = self.public_dns != null
-      error_message = "The instance must have a public DNS name"
+      condition     = self.public_dns != ""
+      error_message = "The instance must be in a public subnet with a IPv4 address attached to be used with CloudFront."
     }
   }
   tags = {
